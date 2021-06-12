@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="product_view" class="Yireo\ExampleHomepageColorWidget\Block\ExampleWidget" placeholder_image="Magento_CatalogWidget::images/products_list.png">
+        <label translate="true">Custom Product View</label>
+        <description translate="true">Display a single product</description>
+        <parameters>
+            <parameter name="product_id" xsi:type="block" required="false" visible="true">
+                <label translate="true">Product ID</label>
+                <block class="Magento\Catalog\Block\Adminhtml\Product\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Product...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+            <parameter name="color1" xsi:type="text" required="false" visible="true">
+                <label translate="true">First color</label>
+            </parameter>
+            <parameter name="color2" xsi:type="text" required="false" visible="true">
+                <label translate="true">Second color</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

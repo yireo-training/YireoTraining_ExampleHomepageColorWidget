@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:View/Layout:etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Yireo\ExampleHomepageColorWidget\Block\ExampleWidget" template="example.phtml">
+                <arguments>
+                    <argument name="product_id" xsi:type="number">2</argument>
+                    <argument name="color1" xsi:type="string">green</argument>
+                    <argument name="color2" xsi:type="string">blue</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

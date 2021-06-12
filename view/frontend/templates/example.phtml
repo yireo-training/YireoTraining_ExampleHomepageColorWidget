@@ -1,0 +1,51 @@
+<?php declare(strict_types=1);
+
+use Yireo\ExampleHomepageColorWidget\Block\ExampleWidget;
+
+/** @var ExampleWidget $block */
+
+$productId = (int)str_replace('product/', '', $block->getData('product_id'));
+$layoutName = $block->getNameInLayout();
+$layoutHash = md5($layoutName);
+$product = $block->getProductById($productId);
+?>
+<div class="fadeout-<?= $layoutHash ?>">
+    <h1 class="product-<?= $productId ?>"><?= $product->getName() ?></h1>
+    <p><?= $product->getDescription() ?></p>
+</div>
+
+<script>
+    require(['jquery'], function ($) {
+        setTimeout(function () {
+            $('.fadeout-<?= $layoutHash ?>').toggleClass('fadeout-highlight');
+        }, 2000);
+
+    });
+</script>
+
+<style>
+    .fadeout-<?= $layoutHash ?> {
+        border: 10px solid <?= $block->getData('color1') ?>;
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+    .fadeout-<?= $layoutHash ?>.fadeout-highlight {
+        animation-duration: 1s;
+        animation-name: changeBorderColor-<?= $layoutHash ?>;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    @keyframes changeBorderColor-<?= $layoutHash ?> {
+        from {
+            border-color: <?= $block->getData('color1'); ?>;
+            transform: scale(1);
+        }
+
+        to {
+            border-color: <?= $block->getData('color2'); ?>;
+            transform: scale(1.01);
+        }
+    }
+</style>
