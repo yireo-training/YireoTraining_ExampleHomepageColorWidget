@@ -4,6 +4,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'Yireo_ExampleHomepageColorWidget',
+    'YireoTraining_ExampleHomepageColorWidget',
     __DIR__
 );

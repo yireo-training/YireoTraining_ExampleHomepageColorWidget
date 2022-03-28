@@ -3,7 +3,7 @@
       xsi:noNamespaceSchemaLocation="urn:magento:module:View/Layout:etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Yireo\ExampleHomepageColorWidget\Block\ExampleWidget" template="example.phtml">
+            <block class="YireoTraining\ExampleHomepageColorWidget\Block\ExampleWidget" template="example.phtml">
                 <arguments>
                     <argument name="product_id" xsi:type="number">2</argument>
                     <argument name="color1" xsi:type="string">green</argument>
